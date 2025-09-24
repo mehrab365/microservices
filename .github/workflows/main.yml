@@ -20,4 +20,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
       - name: Build with Gradle
-        run: ./gradlew :${{ matrix.service }}:clean :${{ matrix.service }}:build --no-daemon
+#        run: ./gradlew :${{ matrix.service }}:clean :${{ matrix.service }}:build --no-daemon
+        working-directory: ${{ matrix.service }}
+        run: ../gradlew clean build
